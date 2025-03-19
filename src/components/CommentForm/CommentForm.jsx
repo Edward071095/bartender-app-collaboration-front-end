@@ -35,13 +35,13 @@ const CommentForm = (props) => {
         value={formData.rating}
         onChange={handleChange}
       />
-      <label htmlFor='text-input'>Your Comment:</label>
+      <label htmlFor='content-input'>Your Comment:</label>
       <textarea
         required
         type='text'
-        name='text'
-        id='text-input'
-        value={formData.text}
+        name='content'
+        id='content-input'
+        value={formData.content}
         onChange={handleChange}
       />
       <button type='submit'>SUBMIT COMMENT</button>
