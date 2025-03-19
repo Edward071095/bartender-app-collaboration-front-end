@@ -6,7 +6,7 @@ const CommentForm = (props) => {
   const [formData, setFormData] = useState({ 
     author: '', 
     rating: '', 
-    content: '' 
+    content: '', 
 });
 
   const handleChange = (evt) => {
