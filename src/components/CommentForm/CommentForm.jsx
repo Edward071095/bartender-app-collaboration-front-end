@@ -3,7 +3,11 @@ import { useState } from 'react';
 
 
 const CommentForm = (props) => {
-  const [formData, setFormData] = useState({ text: '' });
+  const [formData, setFormData] = useState({ 
+    author: '', 
+    rating: '', 
+    content: '' 
+});
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -12,7 +16,7 @@ const CommentForm = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     props.handleAddComment(formData);
-    setFormData({ text: '' });
+    setFormData({ content: '' });
   };
 
   return (
