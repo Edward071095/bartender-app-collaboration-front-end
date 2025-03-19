@@ -16,13 +16,17 @@ const CommentForm = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     props.handleAddComment(formData);
-    setFormData({ content: '' });
+    setFormData({ 
+        author: '',
+        rating: '',
+        content: '',
+    });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor='rating-input'>Your Rating:</label>
-      <textarea
+      <input
         required
         type='text'
         name='rating'
