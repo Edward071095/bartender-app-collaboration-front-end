@@ -50,8 +50,28 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+        {user ? (
+        <>
+          <Route path='/cocktails' element={<CocktailList cocktails={cocktails} />} />
+
+          <Route path='/cocktails/new' element={<CocktailForm handleAddCocktail={handleAddCocktail} />} />
+
+          <Route 
+          path='/cocktails/:cocktailId/edit'
+          element={<CocktailForm handleUpdateCocktail={handleUpdateCocktail}/>}
+          />
+
+          <Route
+          path='/cocktails/:cocktailId'
+          element={<CocktailDetails handleDeleteCocktail={handleDeleteCocktail}/>}
+          />
+        </>
+        ) : (
+        <>
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
+        </>
+        )}
       </Routes>
     </>
   );
