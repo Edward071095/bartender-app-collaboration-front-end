@@ -10,9 +10,16 @@ const CocktailList = (props) => {
         );
     }
 
+  const addCocktail = async (cocktailFormData) => {
+    const newCocktail = await cocktailService.createCocktail(cocktailId, cocktailFormData);
+    setCocktail(newCocktail);
+  };
 
   return (
     <main>
+        <div>
+            <button onClick={addCocktail}>Add Cocktail</button>
+        </div>
       {props.cocktails.map((cocktail) => (
         <Link key={cocktail._id} to={`/cocktails/${cocktail._id}`}>
           <article>
