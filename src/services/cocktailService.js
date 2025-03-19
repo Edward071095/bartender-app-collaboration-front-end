@@ -86,17 +86,15 @@ const index = async () => {
 
   const deleteComment = async (cocktailId, commentId) => {
     try {
-    const res = await fetch(`${BASE_URL}/${cocktailId}`, {
+      const res = await fetch(`${BASE_URL}/${cocktailId}/comments/${commentId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
-            'Content-Type': 'application/json',
-            },
-        body: JSON.stringify(commentId),
-        });
-        return res.json();
+        },
+      });
+      return checkResponse(res);
     } catch (error) {
-        console.log(error);
+      console.log('Error deleting comment:', error);
     }
   };
 

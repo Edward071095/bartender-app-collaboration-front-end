@@ -1,7 +1,11 @@
 import { Link } from "react-router";
+import { useState } from "react";
+import * as cocktailService from "../../services/cocktailService"
 
 
 const CocktailList = (props) => {
+    const [cocktail, setCocktail] = useState(null);
+    
     if (!props.cocktails || props.cocktails.length === 0) {
         return (
             <main>
