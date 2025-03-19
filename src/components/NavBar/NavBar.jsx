@@ -16,14 +16,18 @@ const NavBar = () => {
       {user ? (
         <ul>
           <li>Welcome, {user.username}</li>
-          <li><Link to='/'>Dashboard</Link></li>
+          <li><Link to='/'>Bartender</Link></li>
+          <li><Link to='/cocktails'>Add</Link></li>
+          <li><Link to='/cocktails/search'>Search</Link></li>
+          <li><Link to='/my-cocktails'>Manage</Link></li>
           <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
         </ul>
       ) : (
         <ul>
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='/sign-in'>Sign In</Link></li>
-          <li><Link to='/sign-up'>Sign Up</Link></li>
+          <li><Link to='/cocktails/search'>Search</Link></li>
+          <li><Link to='/auth/sign-in'>Sign In</Link></li>
+          <li><Link to='/auth/sign-up'>Sign Up</Link></li>
         </ul>
       )}
     </nav>
