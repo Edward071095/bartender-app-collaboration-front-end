@@ -1,10 +1,11 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import * as cocktailService from "../../services/cocktailService"
 
 
 const CocktailList = (props) => {
     const [cocktail, setCocktail] = useState(null);
+    const navigate = useNavigate();
     
     if (!props.cocktails || props.cocktails.length === 0) {
         return (
@@ -15,14 +16,14 @@ const CocktailList = (props) => {
     }
 
   const addCocktail = async (cocktailFormData) => {
-    const newCocktail = await cocktailService.createCocktail(cocktailId, cocktailFormData);
+    const newCocktail = await cocktailService.create(cocktailFormData);
     setCocktail(newCocktail);
   };
 
   return (
     <main>
         <div>
-            <button onClick={addCocktail}>Add Cocktail</button>
+            <button onClick={() => navigate('/cocktails/new')}>Add Cocktail</button>
         </div>
       {props.cocktails.map((cocktail) => (
         <Link key={cocktail._id} to={`/cocktails/${cocktail._id}`}>
