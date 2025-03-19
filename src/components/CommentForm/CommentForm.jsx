@@ -17,7 +17,25 @@ const CommentForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor='text-input'>Your comment:</label>
+      <label htmlFor='author-input'>Your Name:</label>
+      <textarea
+        required
+        type='text'
+        name='author'
+        id='author-input'
+        value={formData.author}
+        onChange={handleChange}
+      />
+      <label htmlFor='rating-input'>Your Rating:</label>
+      <textarea
+        required
+        type='text'
+        name='rating'
+        id='rating-input'
+        value={formData.rating}
+        onChange={handleChange}
+      />
+      <label htmlFor='text-input'>Your Comment:</label>
       <textarea
         required
         type='text'
