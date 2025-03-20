@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router';
+import { useParams, Link, useNavigate } from 'react-router';
 import { useState, useEffect, useContext } from 'react';
 import * as cocktailService from '../../services/cocktailService';
 import CocktailForm from '../CocktailForm/CocktailForm';
@@ -6,6 +6,7 @@ import { UserContext } from '../../contexts/UserContext';
 import CommentForm from '../CommentForm/CommentForm';
 
 const CocktailDetails = (props) => {
+    const navigate = useNavigate();
     const [cocktail, setCocktail] = useState(null); 
     const { user } = useContext(UserContext);
     const { cocktailId } = useParams();
@@ -56,6 +57,17 @@ const CocktailDetails = (props) => {
         ));
     };
 
+    const deleteCocktail = () => {
+        if (window.confirm("Are you sure you want to delete this cocktail?")) {
+            props.handleDeleteCocktail(cocktailId);
+
+            setCocktail(null);
+
+            navigate('/cocktails');
+        }
+    } 
+
+    const isAuthor = user && cocktail && user._id === cocktail.author._id;
     
     if (!cocktail) {
         return <p>Loading...</p>; 
@@ -78,6 +90,20 @@ const CocktailDetails = (props) => {
                     <h3 className="cocktail-details-description">{cocktail.description}</h3>
                 </header>
 
+                {isAuthor && (
+                    <div className="creator-actions">
+                        <Link to={`/cocktails/${cocktailId}/edit`} className="edit-button">
+                            Edit Cocktail
+                        </Link>
+                        <button 
+                            onClick={deleteCocktail}
+                            className="delete-button"
+                        >
+                            Delete Cocktail
+                        </button>
+                    </div>
+                )}
+
                 <section className="cocktail-details-sub-info">
                     <h3>Ingredients</h3>
                     <ul>
@@ -97,9 +123,18 @@ const CocktailDetails = (props) => {
                     on ${new Date(cocktail.createdAt).toLocaleDateString()}`}
                 </section>
 
-                <div>
-                    <p>{cocktail.tags}</p>
-                </div>
+                <section className="cocktail-tags">
+                    <h3>Tags</h3>
+                    {cocktail.tags && cocktail.tags.length > 0 ? (
+                        <div className="tags-container">
+                        {cocktail.tags.map((tag, idx) => (
+                            <span key={idx} className="tag-label">{tag}</span>
+                        ))}
+                        </div>
+                    ) : (
+                        <p>No tags</p>
+                    )}
+                </section>
             </section>
 
             <section className="cocktail-details-comments-container">

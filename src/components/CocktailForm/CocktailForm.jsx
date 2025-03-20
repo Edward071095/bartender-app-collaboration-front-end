@@ -18,6 +18,7 @@ const CocktailForm = (props) => {
    };
 
    const [formData, setFormData] = useState(initalState);
+   const [tagText, setTagText] = useState('')
 
    useEffect(() => {
     const fetchCocktail = async () => {
@@ -51,9 +52,25 @@ const CocktailForm = (props) => {
     setFormData({ ...formData, ingredients: updatedIngredients });
    };
 
-//    const handleTagChange = (evt) => {
+   const handleTagChange = (evt) => {
+        setTagText(evt.target.value);
+   };
 
-//    };
+   const addTag = () => {
+    const trimTag = tagText.trim();
+
+    if (trimTag !== '' && !formData.tags.includes(trimTag)) {
+        const updatedTags = [...formData.tags, trimTag];
+
+        setFormData({...formData, tags: updatedTags});
+        setTagText('');
+    }
+   };
+
+   const removeTag = (removedTag) => {
+    const updatedTags = formData.tags.filter(tag => tag !== removedTag);
+    setFormData({...formData, tags: updatedTags})
+   }
 
    const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -155,9 +172,29 @@ const CocktailForm = (props) => {
               onChange={handleChange}
             />
     
-            {/* <label htmlFor='tags-input'>Tags</label>
-            <input
-            /> */}
+    <div className="tags-section">
+              <label htmlFor='tags-input'>Tags</label>
+              <div className="tag-input-container">
+                <input
+                  type='text'
+                  id='tags-input'
+                  value={tagText}
+                  onChange={handleTagChange}
+                  placeholder="Add a tag and press Enter"
+                />
+                <button type="button" onClick={addTag}>Add Tag</button>
+              </div>
+              
+              <div className="tags-list">
+                {formData.tags.map((tag, idx) => (
+                  <div key={idx} className="tag-item">
+                    <span>{tag}</span>
+                    <button type="button" onClick={() => removeTag(tag)}>×</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <button type='submit'>SUBMIT</button>
       </form>
     </main>

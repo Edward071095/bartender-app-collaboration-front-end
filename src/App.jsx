@@ -35,7 +35,7 @@ const App = () => {
 
   const handleDeleteCocktail = async (cocktailId) => {
     const deletedCocktail = await cocktailService.deleteCocktail(cocktailId);
-    setCocktails(cocktails.filter((cocktail) => cocktail.id !== deletedCocktail._id));
+    setCocktails(cocktails.filter((cocktail) => cocktail._id !== deletedCocktail._id));
     navigate('/cocktails');
   };
 
