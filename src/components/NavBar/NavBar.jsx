@@ -17,19 +17,23 @@ const NavBar = () => {
     <nav className={styles.container}>
       {user ? (
         <ul>
-          <li><Link to='/'>Bartender</Link></li>
-          <li><Link to='/cocktails'>All Cocktails</Link></li>
-          <li><Link to='/cocktails/new'>Add Cocktail</Link></li>
-          {/* <li><Link to='/cocktails/search'>Search</Link></li>
-          <li><Link to='/my-cocktails'>My Cocktails</Link></li> */}
-          <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
+          <li className={styles.leftNav}><Link to='/'>Bartender</Link></li>
+          <div className={styles.rightNav}>
+            <li><Link to='/cocktails'>All Cocktails</Link></li>
+            <li><Link to='/cocktails/new'>Add Cocktail</Link></li>
+            {/* <li><Link to='/cocktails/search'>Search</Link></li>
+            <li><Link to='/my-cocktails'>My Cocktails</Link></li> */}
+            <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
+          </div>
         </ul>
       ) : (
         <ul>
-          <li><Link to='/'>Home</Link></li>
+          <li className={styles.leftNav}><Link to='/'>Home</Link></li>
+          <div className={styles.rightNav}>
           <li><Link to='/cocktails/search'>Search</Link></li>
           <li><Link to='/sign-in'>Sign In</Link></li>
           <li><Link to='/sign-up'>Sign Up</Link></li>
+          </div>
         </ul>
       )}
     </nav>
