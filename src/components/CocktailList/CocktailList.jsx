@@ -15,7 +15,7 @@ const CocktailList = (props) => {
     }
 
   const addCocktail = async (cocktailFormData) => {
-    const newCocktail = await cocktailService.createCocktail(cocktailId, cocktailFormData);
+    const newCocktail = await cocktailService.createCocktail(props.cocktailId, cocktailFormData);
     setCocktail(newCocktail);
   };
 
