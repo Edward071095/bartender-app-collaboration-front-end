@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import CocktailList from './components/CocktailList/CocktailList';
 import CocktailDetails from './components/CocktailDetails/CocktailDetails';
 import CocktailForm from './components/CocktailForm/CocktailForm';
+import MyProfile from './components/Profile/MyProfile';
 
 import { UserContext } from './contexts/UserContext';
 
@@ -54,6 +55,8 @@ const App = () => {
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
         <>
+          <Route path='/profile' element={<MyProfile /> }/>
+
           <Route path='/cocktails' element={<CocktailList cocktails={cocktails} />} />
 
           <Route path='/cocktails/new' element={<CocktailForm handleAddCocktail={handleAddCocktail} />} />

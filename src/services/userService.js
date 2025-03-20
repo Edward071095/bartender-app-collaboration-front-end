@@ -19,6 +19,21 @@ const index = async () => {
   }
 };
 
+const getProfile = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/${userID}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}`},
+    });
+
+    if (!res.ok) throw new Error("Failed to fetch user data");
+
+    return res.json()
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
   index,
+  getProfile,
 };
