@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router';
-;
+
 import './App.css';
 
 import * as cocktailService from './services/cocktailService';
