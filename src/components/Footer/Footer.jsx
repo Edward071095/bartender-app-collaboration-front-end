@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-import { Link } from 'react-router';
+// const Footer = () => {
+//     return (
+//     <a href='https://www.flaticon.com/free-icons/cocktail' title="cocktail icons">Cocktail icons created by Freepik - Flaticon</a>
+//     );
+// };
 
-const Footer = () => {
-    return
-    <a Link to=''>
-
-    </a>
-}
+// export default Footer;
