@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className={styles.container}>
         <div className={styles.left}>
           <Link to='/' className={styles.logo}>
-            <img src='src/assets/images/cocktail-logo.png' alt='Logo'></img>
+            <img src='../assets/images/cocktail-logo.png' alt='Logo'></img>
             <span>BarHop</span>
           </Link>
         </div>
