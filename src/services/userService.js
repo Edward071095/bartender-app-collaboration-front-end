@@ -19,9 +19,9 @@ const index = async () => {
   }
 };
 
-const getProfile = async () => {
+const getProfile = async (user) => {
   try {
-    const res = await fetch(`${BASE_URL}/${userID}`, {
+    const res = await fetch(`${BASE_URL}/${user}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}`},
     });
 
