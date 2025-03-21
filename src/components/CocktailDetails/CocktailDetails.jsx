@@ -80,7 +80,7 @@ const CocktailDetails = (props) => {
                 <header className={styles.formTitle}>
                     <div className={styles.formGroup}>
                         {cocktail.imageUrl ? (
-                            <img src={cocktail.imageUrl} alt={cocktail.name} />
+                            <img className={styles.cocktailImage} src={cocktail.imageUrl} alt={cocktail.name} />
                         ) : (
                             <img src="/images/default-cocktail.png" alt="Default Cocktail" />
                         )}
