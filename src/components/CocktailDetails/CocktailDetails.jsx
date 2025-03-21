@@ -45,7 +45,7 @@ const CocktailDetails = (props) => {
 
     
     const getGlassType = () => {
-        return cocktail?.glassType?.default || 'No glass type specified';
+        return cocktail.glassType || 'No glass type specified';
     };
 
     
