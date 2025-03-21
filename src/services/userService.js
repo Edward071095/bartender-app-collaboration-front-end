@@ -33,7 +33,8 @@ const getProfile = async () => {
   }
 };
 
-export {
+export default {
   index,
   getProfile,
 };
+
