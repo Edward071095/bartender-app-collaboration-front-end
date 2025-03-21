@@ -19,15 +19,14 @@ const CocktailList = (props) => {
     }
 
 
-  // Function to chunk array into rows of 3 for desktop view
-  const chunkArray = (array, size) => {
-    return Array.from({ length: Math.ceil(array.length / size) }, (_, i) =>
-      array.slice(i * size, i * size + size)
-    );
-  };
+//   const chunkArray = (array, size) => {
+//     return Array.from({ length: Math.ceil(array.length / size) }, (_, i) =>
+//       array.slice(i * size, i * size + size)
+//     );
+//   };
 
 
-  const cocktailRows = chunkArray(props.cocktails, 3); // 3 drinks per row
+//   const cocktailRows = chunkArray(props.cocktails, 3); 
 
 
   const addCocktail = async (cocktailFormData) => {

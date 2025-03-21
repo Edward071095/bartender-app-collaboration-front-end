@@ -14,31 +14,36 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={styles.container}>
-      {user ? (
-        <ul>
-          <li className={styles.leftNav}><Link to='/'>Bartender</Link></li>
-          <div className={styles.rightNav}>
+    <nav className={styles.nav}>
+    <div className={styles.wrapper}>
+      <div className={styles.left}>
+        <Link to='/' className={styles.brand}>
+          <img src='../asssets/images/cocktail-logo.png' alt='Logo'></img>
+          <span>Cocktails</span>
+        </Link>
+      </div>
+      
+      <div className={styles.right}>
+        {user ? (
+          <ul>
+            <li><Link to='/'>Bartender</Link></li>
             <li><Link to='/cocktails'>All Cocktails</Link></li>
             <li><Link to='/cocktails/new'>Add Cocktail</Link></li>
-            <li><Link to='/profiles'>My Profile</Link></li>
-            {/* <li><Link to='/cocktails/search'>Search</Link></li>
-            <li><Link to='/my-cocktails'>My Cocktails</Link></li> */}
-            <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
-          </div>
-        </ul>
-      ) : (
-        <ul>
-          <li className={styles.leftNav}><Link to='/'>Home</Link></li>
-          <div className={styles.rightNav}>
-          <li><Link to='/cocktails/search'>Search</Link></li>
-          <li><Link to='/sign-in'>Sign In</Link></li>
-          <li><Link to='/sign-up'>Sign Up</Link></li>
-          </div>
-        </ul>
-      )}
-    </nav>
-  );
+            <li><Link to={`/profiles/${user._id}`}>My Profile</Link></li>
+            <li><Link to='/' onClick={handleSignOut} className={styles.btn}>Sign Out</Link></li>
+          </ul>
+        ) : (
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/cocktails/search'>Search</Link></li>
+            <li><Link to='/sign-in' className={styles.btnOutline}>Sign In</Link></li>
+            <li><Link to='/sign-up' className={styles.btn}>Sign Up</Link></li>
+          </ul>
+        )}
+      </div>
+    </div>
+  </nav>
+);
 };
 
 export default NavBar;
