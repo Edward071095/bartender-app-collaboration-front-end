@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router";
 import { useEffect, useState, useContext } from "react";
 import userService from "../../services/userService";
 import { UserContext } from '../../contexts/UserContext';
@@ -8,6 +9,8 @@ const MyProfile = () => {
     const { user } = useContext(UserContext);
     const [userData, setUserData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const fetchUserProfile = async () => {
@@ -39,7 +42,9 @@ const MyProfile = () => {
             ) 
         )}
         <p>{user.username}</p>
-        </main>
+        <p>{user.bio}</p>
+              <button onClick={() => navigate('/cocktails/new')}>Edit Profile</button>
+       </main>
     );
 };
 
