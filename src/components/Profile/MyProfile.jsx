@@ -33,11 +33,12 @@ const MyProfile = () => {
            <EditProfile user={userData} onSave={handleSave} />
         ) : (
             user.profileImage ? (
-              <img src={userData.profileImage} alt={userData.username} />
+              <img src={user.profileImage} alt={user.username} />
             ) : (
                 <img src="/images/default-profileImg.jpg" alt="default-profile-picture"  />
             ) 
         )}
+        <p>{user.username}</p>
         </main>
     );
 };
