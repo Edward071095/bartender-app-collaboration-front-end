@@ -1,22 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import userService from "../../services/userService";
+import { UserContext } from '../../contexts/UserContext';
+
 // import EditProfile from "./EditProfile"
 
 const MyProfile = () => {
-    const [user, setUser] = useState(null);
+    const { user } = useContext(UserContext);
+    const [userData, setUserData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
 
     useEffect(() => {
         const fetchUserProfile = async () => {
-            const userData = await userService.getUserProfile();
-            setUser(userData);
+            const userProfile = await userService.getProfile(user._id);
+            setUserData(userProfile);
         };
 
-        fetchUserProfile
+        fetchUserProfile();
     }, []);
 
     const handleSave = (updatedUser) => {
-        setUser(updatedUser);
+        setUserData(updatedUser);
         setIsEditing(false);
     };
 
@@ -27,7 +30,7 @@ const MyProfile = () => {
         <main>
         <h1>My Profile</h1>
         {isEditing ? (
-           <EditProfile user={user} onSave={handleSave} />
+           <EditProfile user={userData} onSave={handleSave} />
         ) : (
             user.profileImage ? (
               <img src={user.profileImage} alt={user.username} />
@@ -35,6 +38,7 @@ const MyProfile = () => {
                 <img src="/images/default-profileImg.jpg" alt="default-profile-picture"  />
             ) 
         )}
+        <p>{user.username}</p>
         </main>
     );
 };

@@ -21,7 +21,7 @@ const NavBar = () => {
           <div className={styles.rightNav}>
             <li><Link to='/cocktails'>All Cocktails</Link></li>
             <li><Link to='/cocktails/new'>Add Cocktail</Link></li>
-            <li><Link to='/profiles'>My Profile</Link></li>
+            <li><Link to={`/profiles/${user._id}`}>My Profile</Link></li>
             {/* <li><Link to='/cocktails/search'>Search</Link></li>
             <li><Link to='/my-cocktails'>My Cocktails</Link></li> */}
             <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>

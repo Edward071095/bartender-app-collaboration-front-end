@@ -55,7 +55,7 @@ const App = () => {
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
         <>
-          <Route path='/profile' element={<MyProfile /> }/>
+          <Route path='/profiles/:userId' element={<MyProfile /> }/>
 
           <Route path='/cocktails' element={<CocktailList cocktails={cocktails} />} />
 
