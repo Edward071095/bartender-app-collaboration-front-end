@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import userService from "..services/userService";
-import EditProfile from "./EditProfile"
+import userService from "../../services/userService";
+// import EditProfile from "./EditProfile"
 
 const MyProfile = () => {
     const [user, setUser] = useState(null);
