@@ -37,21 +37,30 @@ const CocktailList = (props) => {
 
   return (
     <main className={styles.pageContainer}>
+    <h1 className={styles.pageTitle}>Cocktails</h1>
       <div className={styles.shelfRow}>
         <div className={styles.cellarGrid}>
-          {props.cocktails.map((cocktail) => (
+        {props.cocktails.map((cocktail) => (
             <Link 
               key={cocktail._id} 
               to={`/cocktails/${cocktail._id}`}
-              className={styles.cocktailCard}>
+              className={styles.cocktailCard}
+              >
+              <div className={styles.cocktailImageContainer}>
+                  <img 
+                    src={cocktail.imageUrl || 'src/assets/images/cocktail-placeholder.jpg'} 
+                    alt={cocktail.name} 
+                    className={styles.cocktailImage}
+                  />
+              </div>
               <article>
-                <header className={styles.cocktailHeader}>
+                <div className={styles.cocktailHeader}>
                   <h2 className={styles.cocktailName}>{cocktail.name}</h2>
                   <p className={styles.cocktailMeta}>
                     {`${cocktail.author?.username || 'Unknown'} created on 
                     ${new Date(cocktail.createdAt).toLocaleDateString()}`}
                   </p>
-                </header>
+                </div>
   
                 {/* {cocktail.tags && (
                   <div className={styles.cocktailTags}>

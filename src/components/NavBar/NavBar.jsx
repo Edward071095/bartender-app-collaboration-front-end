@@ -14,36 +14,35 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={styles.nav}>
-    <div className={styles.wrapper}>
-      <div className={styles.left}>
-        <Link to='/' className={styles.brand}>
-          <img src='../asssets/images/cocktail-logo.png' alt='Logo'></img>
-          <span>Cocktails</span>
-        </Link>
+    <nav className={styles.leftNav}>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <Link to='/' className={styles.logo}>
+            <img src='src/assets/images/cocktail-logo.png' alt='Logo'></img>
+            <span>BarHop</span>
+          </Link>
+        </div>
+        
+        <div className={styles.rightNav}>
+          {user ? (
+            <ul>
+              <li><Link to='/cocktails'>All Cocktails</Link></li>
+              <li><Link to='/cocktails/new'>Add Cocktail</Link></li>
+              <li><Link to={`/profiles/${user._id}`}>My Profile</Link></li>
+              <li><Link to='/' onClick={handleSignOut} className={styles.signOutBtn}>Sign Out</Link></li>
+            </ul>
+          ) : (
+            <ul>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/cocktails/search'>Search</Link></li>
+              <li><Link to='/sign-in' className={styles.signInBtn}>Sign In</Link></li>
+              <li><Link to='/sign-up' className={styles.signUpBtn}>Sign Up</Link></li>
+            </ul>
+          )}
+        </div>
       </div>
-      
-      <div className={styles.right}>
-        {user ? (
-          <ul>
-            <li><Link to='/'>Bartender</Link></li>
-            <li><Link to='/cocktails'>All Cocktails</Link></li>
-            <li><Link to='/cocktails/new'>Add Cocktail</Link></li>
-            <li><Link to={`/profiles/${user._id}`}>My Profile</Link></li>
-            <li><Link to='/' onClick={handleSignOut} className={styles.btn}>Sign Out</Link></li>
-          </ul>
-        ) : (
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/cocktails/search'>Search</Link></li>
-            <li><Link to='/sign-in' className={styles.btnOutline}>Sign In</Link></li>
-            <li><Link to='/sign-up' className={styles.btn}>Sign Up</Link></li>
-          </ul>
-        )}
-      </div>
-    </div>
-  </nav>
-);
+    </nav>
+  );
 };
 
 export default NavBar;
