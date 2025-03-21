@@ -1,4 +1,7 @@
 .pageContainer {
+    background-color: #1a1310;
+    background-image: url('src/assets/images/dark-wood-texture.jpg');
+    background-size: cover;
     background-size: cover;
     min-height: 100vh;
     padding: 100px 40px 60px;
@@ -9,8 +12,9 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
-    font-family: 'Playfair Display', serif; /* Optional: Use a more elegant font */
+    font-family: serif; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
   }
   
   .cellarGrid {
@@ -44,11 +48,11 @@
   }
   
   .cocktailCard {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(28, 22, 18, 0.9);
     border: 1px solid rgba(232, 217, 197, 0.4);
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.1);
-    padding: 24px;
+    padding: 0;
     transition: all 0.3s ease;
     text-decoration: none;
     color: #e8d9c5;
@@ -70,39 +74,66 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(to right, #6e6e6e, #fdfdfd, #6e6e6e);
+    background: linear-gradient(to right, #b38728, #fcf6ba, #b38728);
   }
+
+  .cocktailImageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+   }
+   
+   .cocktailImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+   }
+   
+   .cocktailCard:hover .cocktailImage {
+    transform: scale(1.05);
+   }
   
   .cocktailHeader {
     border-bottom: 1px solid rgba(232, 217, 197, 0.3);
-    margin-bottom: 16px;
-    padding-bottom: 12px;
+    margin-bottom: 0px;
+    padding-bottom: 16px 24px 12px;
   }
   
   .cocktailName {
     font-size: 1.5rem;
     margin: 0 0 8px 0;
-    color: #000000;
+    color: #e8d9c5;
+    font-family: serif;
+    letter-spacing: 0.5px;
   }
   
   .cocktailMeta {
     font-size: 0.9rem;
-    color: #000000;
+    color: #b38728;
     font-style: italic;
+    margin: 0;
+
   }
   
   .cocktailTags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 16px;
+    margin: 0;
+    padding: 16px 24px;
   }
   
   .cocktailTag {
     background-color: rgba(232, 217, 197, 0.15);
+    border: 1px solid rgba(179, 135, 40, 0.5);
     border-radius: 20px;
     padding: 4px 12px;
     font-size: 0.75rem;
+    color: #e8d9c5;
     display: inline-block;
   }
   
@@ -163,5 +194,9 @@
     .pageTitle {
       font-size: 2rem;
       margin-bottom: 30px;
+    }
+
+    .cocktailImageContainer {
+      height: 180px;
     }
   }
