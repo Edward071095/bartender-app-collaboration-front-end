@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import userService from "../../services/userService";
 import { UserContext } from '../../contexts/UserContext';
 
-// import EditProfile from "./EditProfile"
+import EditProfile from "./EditProfile"
 
 const MyProfile = () => {
     const { user } = useContext(UserContext);
