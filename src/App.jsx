@@ -15,6 +15,7 @@ import CocktailForm from './components/CocktailForm/CocktailForm';
 import MyProfile from './components/Profile/MyProfile';
 
 import { UserContext } from './contexts/UserContext';
+import EditProfile from './components/Profile/EditProfile';
 
 const App = () => {
   const { user } = useContext(UserContext);
@@ -56,6 +57,8 @@ const App = () => {
         {user ? (
         <>
           <Route path='/profiles/:userId' element={<MyProfile /> }/>
+
+          <Route path='/profiles/:userId/edit' element={<EditProfile user={user} />} />
 
           <Route path='/cocktails' element={<CocktailList cocktails={cocktails} />} />
 

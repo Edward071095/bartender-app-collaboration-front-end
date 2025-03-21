@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { useEffect, useState, useContext } from "react";
 import userService from "../../services/userService";
 import { UserContext } from '../../contexts/UserContext';
@@ -9,7 +9,6 @@ const MyProfile = () => {
     const { user } = useContext(UserContext);
     const [userData, setUserData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
-    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -43,7 +42,7 @@ const MyProfile = () => {
         )}
         <p>{user.username}</p>
         <p>{user.bio}</p>
-              <button onClick={() => navigate('/cocktails/new')}>Edit Profile</button>
+            <button><Link to={`/profiles/${user._id}/edit`}>Edit Profile</Link></button>
        </main>
     );
 };
