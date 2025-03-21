@@ -5,6 +5,8 @@ import { signUp } from '../../services/authService';
 
 import { UserContext } from '../../contexts/UserContext';
 
+import styles from '../../css-styling/sign-up.module.css'
+
 const SignUpForm = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
@@ -38,13 +40,15 @@ const SignUpForm = () => {
   };
 
   return (
-    <main>
-      <h1>Sign Up</h1>
-      <p>{message}</p>
+    <div className={styles.scrollableWrapper}>
+      <div className={styles.formContainer}>
+      <h1 className={styles.formTitle}>Sign Up</h1>
+      <p className={styles.formTitle}>{message}</p>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor='username'>Username:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor='username'>Username:</label>
           <input
+            className={styles.input} 
             type='text'
             id='name'
             value={username}
@@ -53,9 +57,10 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='password'>Password:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor='password'>Password:</label>
           <input
+            className={styles.input} 
             type='password'
             id='password'
             value={password}
@@ -64,9 +69,10 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='confirm'>Confirm Password:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor='confirm'>Confirm Password:</label>
           <input
+            className={styles.input}
             type='password'
             id='confirm'
             value={passwordConf}
@@ -76,11 +82,12 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <button disabled={isFormInvalid()}>Sign Up</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
+          <button className={styles.addButton} disabled={isFormInvalid()}>Sign Up</button>
+          <button className={styles.submitButton} onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
-    </main>
+    </div>
+    </div>
   );
 };
 

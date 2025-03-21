@@ -1,0 +1,167 @@
+.pageContainer {
+    background-size: cover;
+    min-height: 100vh;
+    padding: 100px 40px 60px;
+  }
+  
+  .pageTitle {
+    color: #e8d9c5;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif; /* Optional: Use a more elegant font */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cellarGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .shelfRow {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid rgba(232, 217, 197, 0.3);
+  }
+  
+  .shelfRow::before,
+  .shelfRow::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(232, 217, 197, 0.2);
+  }
+  
+  .shelfRow::after {
+    bottom: -18px;
+    height: 2px;
+  }
+  
+  .cocktailCard {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(232, 217, 197, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.1);
+    padding: 24px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #e8d9c5;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .cocktailCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  
+  .cocktailCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #6e6e6e, #fdfdfd, #6e6e6e);
+  }
+  
+  .cocktailHeader {
+    border-bottom: 1px solid rgba(232, 217, 197, 0.3);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+  
+  .cocktailName {
+    font-size: 1.5rem;
+    margin: 0 0 8px 0;
+    color: #000000;
+  }
+  
+  .cocktailMeta {
+    font-size: 0.9rem;
+    color: #000000;
+    font-style: italic;
+  }
+  
+  .cocktailTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .cocktailTag {
+    background-color: rgba(232, 217, 197, 0.15);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    display: inline-block;
+  }
+  
+  .addButton {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #b38728;
+    color: #1a1310;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .addButton:hover {
+    background-color: #d4a93a;
+    transform: scale(1.05);
+  }
+  
+  .emptyMessage {
+    text-align: center;
+    color: #e8d9c5;
+    font-size: 1.2rem;
+    padding: 40px;
+    background-color: rgba(40, 30, 25, 0.7);
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 100px auto;
+    border: 1px solid rgba(232, 217, 197, 0.3);
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .pageContainer {
+      padding: 90px 20px 100px;
+    }
+    
+    .cellarGrid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .addButton {
+      bottom: 30px;
+      right: 30px;
+      width: 55px;
+      height: 55px;
+    }
+    
+    .pageTitle {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+  }

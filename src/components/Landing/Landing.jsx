@@ -16,7 +16,7 @@ const Landing = () => {
           Sign Up
         </button>
         <button className={`${styles.button} ${styles.secondary}`} onClick={() => navigate('/sign-in')}>
-          Log In
+          Sign In
         </button>
       </div>
     </main>

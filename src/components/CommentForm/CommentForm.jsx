@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../../css-styling/CommentForm.module.css';
 
 
 
@@ -36,9 +37,13 @@ const CommentForm = (props) => {
   };
 
   return (
+    <div className={styles.formContainer}>
+     
     <form onSubmit={handleSubmit}>
-      <label htmlFor='content-input'>Your Comment:</label>
+    <div className={styles.formGroup}>
+      <label className={styles.formTitle} htmlFor='content-input'>Your Comment:</label>
       <textarea
+        className={styles.textarea}
         required
         type='text'
         name='content'
@@ -46,8 +51,9 @@ const CommentForm = (props) => {
         value={formData.content}
         onChange={handleChange}
       />
-      <label htmlFor='rating-input'>Your Rating:</label>
-      <div className="star-rating">
+    </div>
+      <label className={styles.formTitle} htmlFor='rating-input'>Your Rating:</label>
+      <div className={styles.formGroup}>
         {[1,2,3,4,5].map((star) => (
           <span
             key={star}
@@ -67,8 +73,9 @@ const CommentForm = (props) => {
         ))}
       </div>
     
-      <button type='submit'>SUBMIT COMMENT</button>
+      <button className={styles.addButton} type='submit'>Submit Comment</button>
     </form>
+    </div>
   );
 };
 
