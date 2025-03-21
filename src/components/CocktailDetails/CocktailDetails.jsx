@@ -4,6 +4,7 @@ import * as cocktailService from '../../services/cocktailService';
 import CocktailForm from '../CocktailForm/CocktailForm';
 import { UserContext } from '../../contexts/UserContext';
 import CommentForm from '../CommentForm/CommentForm';
+import styles from '../../css-styling/CocktailDetails.module.css'
 
 const CocktailDetails = (props) => {
     const navigate = useNavigate();
@@ -74,10 +75,10 @@ const CocktailDetails = (props) => {
     }
 
     return (
-        <main>
-            <section className="cocktail-details-container">
-                <header className="cocktail-details-header-items">
-                    <div>
+        <div className={styles.scrollableWrapper}>
+            <section className={styles.formContainer}>
+                <header className={styles.formTitle}>
+                    <div className={styles.formGroup}>
                         {cocktail.imageUrl ? (
                             <img src={cocktail.imageUrl} alt={cocktail.name} />
                         ) : (
@@ -85,45 +86,46 @@ const CocktailDetails = (props) => {
                         )}
                     </div>
 
-                    <h1 className="cocktail-details-name">{cocktail.name}</h1>
-                    <h2>{cocktail.author.username}</h2>
-                    <h3 className="cocktail-details-description">{cocktail.description}</h3>
+                    <h1 className={styles.formTitle}>Cocktail: {cocktail.name}</h1>
+                    <h2 className={styles.formTitle}>Creator: {cocktail.author.username}</h2>
+                    <h3 className={styles.textarea}>Description: {cocktail.description}</h3>
                 </header>
 
                 {isAuthor && (
                     <div className="creator-actions">
-                        <Link to={`/cocktails/${cocktailId}/edit`} className="edit-button">
+                        <Link to={`/cocktails/${cocktailId}/edit`} className={styles.addButton}>
                             Edit Cocktail
                         </Link>
                         <button 
                             onClick={deleteCocktail}
-                            className="delete-button"
+                            className={styles.submitButton}
                         >
                             Delete Cocktail
                         </button>
                     </div>
                 )}
 
-                <section className="cocktail-details-sub-info">
-                    <h3>Ingredients</h3>
-                    <ul>
+                <section className={styles.ingredientsContainer}>
+                    <h3 className={styles.formTitle}>Ingredients</h3>
+                    <ul className={styles.instructionsList}>
                         {renderIngredients() || <p>No ingredients available.</p>}
                     </ul>
 
-                    <h3>Instructions:</h3>
-                    <p>{cocktail.instructions}</p>
+                    <h3 className={styles.formTitle}>Instructions:</h3>
+                    <ul className={styles.ingredientList}>{cocktail.instructions}
+                    </ul>
                 </section>
 
                 <section>
-                    <p>{getGlassType()}</p>
+                    <p className={styles.formTitle}>{getGlassType()}</p>
                 </section>
 
-                <section>
+                <section className={styles.formTitle}>
                     {`Posted by: ${cocktail.author.username}
                     on ${new Date(cocktail.createdAt).toLocaleDateString()}`}
                 </section>
 
-                <section className="cocktail-tags">
+                <section className={styles.formTitle}>
                     <h3>Tags</h3>
                     {cocktail.tags && cocktail.tags.length > 0 ? (
                         <div className="tags-container">
@@ -146,22 +148,22 @@ const CocktailDetails = (props) => {
                 {cocktail.comments.map((comment) => (
                     <article key={comment._id}>
                         <header>
-                            <p>
+                            <p className={styles.formTitle}>
                                 {`${comment.author.username} posted on
                                 ${new Date(comment.createdAt).toLocaleDateString()}`}
                             </p>
                         </header>
-                        <p>Rating: {comment.rating}/5</p>
-                        <p>{comment.content}</p>
+                        <p className={styles.formTitle}>Rating: {comment.rating}/5</p>
+                        <p className={styles.formTitle}>{comment.content}</p>
                         {user && comment.author && user._id === comment.author._id && (
-                            <button onClick={() => handleDeleteComment(comment._id)} className="comment-delete-button">
+                            <button className={styles.submitButton} onClick={() => handleDeleteComment(comment._id)}>
                                 Delete Comment
                             </button>
                         )}
                     </article>
                 ))}
             </section>
-        </main>
+        </div>
     );
 };
 

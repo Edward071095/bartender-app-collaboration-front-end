@@ -1,7 +1,7 @@
 .scrollableWrapper {
     height: 100vh;
-    padding-top: 200px; /* Adjust based on your navbar height */
-    padding-bottom: 600px;
+    padding-top: 300px; /* Adjust based on your navbar height */
+    padding-bottom: 400px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -76,27 +76,6 @@
     align-items: center;
   }
   
-  .ingredientList {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.ingredientList li {
-    margin-bottom: 8px;
-}
-
-.instructionsList {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-}
-
-.instructionsList li {
-    margin-bottom: 10px;
-}
-
   .removeButton {
     background-color: #ff6b6b;
     color: white;
