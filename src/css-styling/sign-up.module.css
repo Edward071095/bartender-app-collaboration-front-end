@@ -5,7 +5,7 @@
   flex-direction: column;
   background-color: #1a1310;
   background-image: url('../assets/images/dark-wood-texture.jpg');
-  background-size: cover;
+  background-size: cover; 
   background-size: cover;
   min-height: 100vh;
   padding: 100px 40px 60px;
@@ -31,7 +31,7 @@
     /* width: 100%; */
     /* margin: 0 auto 40px; */
     /* padding: 30px; */
-    background-color: white;
+    /* background-color: white; */
     /* border-radius: 12px; */
     /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
   }
@@ -90,7 +90,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 10px; 
   }
   
   .addButton:hover {
@@ -98,7 +98,7 @@
   }
   
   .submitButton {
-    width: 100%;
+    /* width: 100%;
     padding: 14px;
     background-color: tan;
     color: white;
@@ -108,36 +108,11 @@
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 24px;
+    margin-top: 24px; */
   }
   
   .submitButton:hover {
     background-color: #ff5252;
   }
+
   
-  .submitButton:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
-    .formContainer {
-      margin: 90px auto 30px;
-      padding: 20px;
-      width: 90%;
-    }
-    
-    .formTitle {
-      font-size: 24px;
-    }
-    
-    .ingredientRow {
-      flex-direction: column;
-      gap: 8px;
-    }
-    
-    .ingredientRow > * {
-      width: 100%;
-    }
-  }
