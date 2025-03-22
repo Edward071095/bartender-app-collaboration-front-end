@@ -100,11 +100,13 @@
   }
   
   .signInBtn {
-    border: 1px solid #b38728;
+    background-color: #b38728;
+    color: #1a1310 !important;
   }
   
   .signInBtn:hover {
-    background-color: rgba(179, 135, 40, 0.1);
+    background-color: #d4a93a;
+    color: #1a1310 !important;
   }
   
   .signUpBtn {

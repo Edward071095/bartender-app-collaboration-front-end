@@ -19,9 +19,10 @@
 }
 
 body {
-  background-color: #FFFFFF;
-  color: #000000;
-  font-family: 'Fugaz One', sans-serif;
+
+  /* background-color: #FFFFFF;
+  color: #000000; */
+  font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
   font-size: 24px;
   min-height: 100vh;
   margin: 0;
