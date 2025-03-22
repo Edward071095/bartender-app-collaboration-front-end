@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { useEffect, useState, useContext } from "react";
 import userService from "../../services/userService";
 import { UserContext } from '../../contexts/UserContext';
+import styles from "../../css-styling/MyProfile.module.css";
 
 import EditProfile from "./EditProfile"
 
@@ -29,15 +30,15 @@ const MyProfile = () => {
         return <p>Loading profile...</p>;
 
     return (
-        <main>
-        <h1>My Profile</h1>
+        <main className={styles.profileContainer}>
+        <h1 className={styles.profileHeader}>My Profile</h1>
         {isEditing ? (
            <EditProfile user={userData} onSave={handleSave} />
         ) : (
             user.profileImage ? (
-              <img src={user.profileImage} alt={user.username} />
+              <img className={styles.myProfileImage} src={user.profileImage} alt={user.username} />
             ) : (
-                <img src="/images/default-profileImg.jpg" alt="default-profile-picture"  />
+                <img className={styles.myProfileImage} src="/images/default-profileImg.jpg" alt="default-profile-picture"  />
             ) 
         )}
         <p>{user.username}</p>
