@@ -3,13 +3,15 @@ import { useNavigate, Link } from "react-router";
 
 import styles from '../../css-styling/Landing-page.module.css';
 
+import cocktailLogo from '../../assets/images/cocktail-logo.png';
+
 const Landing = () => {
   const navigate = useNavigate();
 
   
   return (
     <main className={styles.container}>
-      <img className={styles.logoLanding} src='../assets/images/cocktail-logo.png' alt='Logo'></img>
+      <img src={cocktailLogo} alt='Logo'></img>
       <h1 className={styles.title}>Welcome to BarFly</h1>
       <p className={styles.description}>Sign up or sign in to see your own Cocktail Bar</p>
       <div className={styles.buttonGroup}>
