@@ -1,10 +1,18 @@
 .profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #1a1310;
     background-image: url('../assets/images/dark-wood-texture.jpg');
     background-size: cover;
     background-size: cover;
     min-height: 100vh;
     padding: 100px 40px 60px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 30px;
+
   }
 
   .profileHeader {
@@ -17,11 +25,35 @@
     letter-spacing: 1px;
   }
 
-  .myProfileImage {
-    position: relative;
+  /* .myProfileImage {
+    position: relative; 
     width: 100%;
     height: 200px;
     overflow: hidden;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    color: white;
+  } */
+
+  .myProfileName {
+    color: rgb(206, 154, 86);
+    font-family: sans-serif;
+    -webkit-text-stroke: 1px white;
   }
+
+  .myProfileBio {
+    color: #e8d9c5;
+    font-family: sans-serif;
+  }
+
+.editProfileButton {
+    background-color: #e8d9c5;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.editProfileButton a {
+    color: #1a1310;
+    text-decoration: none;
+}
