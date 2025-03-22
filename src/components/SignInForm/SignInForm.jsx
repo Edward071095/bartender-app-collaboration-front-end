@@ -33,6 +33,7 @@ const SignInForm = () => {
   };
 
   return (
+    <main className={styles.signinPage}>
     <div className={styles.scrollableWrapper}>
       <div className={styles.formContainer}>
       <h1 className={styles.formTitle}>Sign In</h1>
@@ -71,6 +72,7 @@ const SignInForm = () => {
       </form>
       </div>
     </div>
+    </main>
   );
 };
 
