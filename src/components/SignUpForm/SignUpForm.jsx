@@ -40,6 +40,7 @@ const SignUpForm = () => {
   };
 
   return (
+    <main className={styles.signupPage}>
     <div className={styles.scrollableWrapper}>
       <div className={styles.formContainer}>
       <h1 className={styles.formTitle}>Sign Up</h1>
@@ -82,12 +83,13 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <button className={styles.addButton} disabled={isFormInvalid()}>Sign Up</button>
+          <button className={styles.signupButton} disabled={isFormInvalid()}>Sign Up</button>
           <button className={styles.submitButton} onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
     </div>
     </div>
+    </main>
   );
 };
 
