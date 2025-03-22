@@ -1,6 +1,6 @@
 .scrollableWrapper {
   height: 100vh;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 60px;
   overflow-y: auto;
   display: flex;
@@ -8,7 +8,7 @@
   align-items: center;
   -webkit-overflow-scrolling: touch;
   background-color: #1a1310;
-  background-image: url('src/assets/images/dark-wood-texture.jpg');
+  background-image: url('../assets/images/dark-wood-texture.jpg');
   background-size: cover;
   color: #e8d9c5;
   font-family: sans-serif;
@@ -21,17 +21,18 @@
   padding: 40px;
   background-color: rgba(28, 22, 18, 0.8);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.1);
   border: 1px solid rgba(232, 217, 197, 0.2);
+  color: #e8d9c5;
 }
 
 .formTitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 24px;
   text-align: center;
   color: #e8d9c5;
-  font-family: 'Lora', serif;
+  font-family: serif;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
