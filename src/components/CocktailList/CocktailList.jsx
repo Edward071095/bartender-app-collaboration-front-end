@@ -3,6 +3,8 @@ import { useState } from "react";
 import * as cocktailService from "../../services/cocktailService"
 import styles from "../../css-styling/CocktailList.module.css";
 
+import ed from '../../assets/images/cocktail-placeholder.jpg';
+
 
 
 
@@ -48,7 +50,7 @@ const CocktailList = (props) => {
               >
               <div className={styles.cocktailImageContainer}>
                   <img 
-                    src={cocktail.imageUrl || 'src/assets/images/cocktail-placeholder.jpg'} 
+                    src={cocktail.imageUrl || ed} 
                     alt={cocktail.name} 
                     className={styles.cocktailImage}
                   />
