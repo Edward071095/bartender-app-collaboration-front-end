@@ -41,9 +41,9 @@ const MyProfile = () => {
                 <img className={styles.myProfileImage} src="/images/default-profileImg.jpg" alt="default-profile-picture"  />
             ) 
         )}
-        <p>{user.username}</p>
-        <p>{user.bio}</p>
-            <button><Link to={`/profiles/${user._id}/edit`}>Edit Profile</Link></button>
+        <p className={styles.myProfileName}>{user.username}</p>
+        <p className={styles.myProfileBio}>Bio:{user.bio}</p>
+            <button className={styles.editProfileButton}><Link to={`/profiles/${user._id}/edit`}>Edit Profile</Link></button>
        </main>
     );
 };
