@@ -9,8 +9,9 @@ const Landing = () => {
   
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>Hello, you are on the landing page for visitors.</h1>
-      <p className={styles.description}>Sign up now, or sign in to see your super secret dashboard!</p>
+      <img className={styles.logoLanding} src='../assets/images/cocktail-logo.png' alt='Logo'></img>
+      <h1 className={styles.title}>Welcome to BarFly</h1>
+      <p className={styles.description}>Sign up or sign in to see your own Cocktail Bar</p>
       <div className={styles.buttonGroup}>
         <button className={`${styles.button} ${styles.primary}`} onClick={() => navigate('/sign-up')}>
           Sign Up
