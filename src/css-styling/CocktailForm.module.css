@@ -1,13 +1,17 @@
 .scrollableWrapper {
   height: 100vh;
-  padding-top: 200px; /* Adjust based on your navbar height */
-  padding-bottom: 600px;
+  padding-top: 100px;
+  padding-bottom: 60px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  -webkit-overflow-scrolling: touch; /* smoother scrolling on iOS */
-
+  -webkit-overflow-scrolling: touch;
+  background-color: #1a1310;
+  background-image: url('../assets/images/dark-wood-texture.jpg');
+  background-size: cover;
+  color: #e8d9c5;
+  font-family: sans-serif;
 }
 
 .formContainer {
@@ -15,17 +19,19 @@
   width: 100%;
   margin: 0 auto 40px;
   padding: 30px;
-  background-color: white;
+  background-color: #1a1310;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .formTitle {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  text-align: center;
-  color: #333;
+  color: #e8d9c5;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-family: serif; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
 }
 
 .formGroup {
@@ -52,7 +58,7 @@
 .input:focus,
 .textarea:focus,
 .select:focus {
-  border-color: #ff6b6b;
+  border-color: darkred;
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
 }
@@ -66,7 +72,7 @@
   margin-bottom: 20px;
   padding: 16px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: rgba(141, 139, 139, 0.8)
 }
 
 .ingredientRow {
@@ -111,8 +117,17 @@
   width: 100%;
 }
 
+.tagButton {
+  background-color: darkred;
+  margin-left: 5px;
+}
+
+.tagButton:hover {
+  background-color: #ff5252;
+}
+
 .removeButton {
-  background-color: #ff6b6b;
+  background-color: darkred;
   color: white;
   border: none;
   border-radius: 50%;
@@ -131,7 +146,7 @@
 }
 
 .addButton {
-  background-color: #4caf50;
+  background-color: #d4a93a;
   color: white;
   border: none;
   border-radius: 8px;
@@ -146,14 +161,13 @@
 }
 
 .addButton:hover {
-  background-color: #43a047;
+  background-color: #d9b967;
 }
 
 .submitButton {
-  width: 100%;
-  padding: 14px;
-  background-color: #ff6b6b;
-  color: white;
+  width: 50%;
+  padding: 8px;
+  background-color: darkred;
   border: none;
   border-radius: 8px;
   font-size: 16px;
