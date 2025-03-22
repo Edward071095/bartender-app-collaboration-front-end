@@ -242,7 +242,7 @@ const CocktailForm = (props) => {
                 {formData.tags.map((tag, idx) => (
                   <div key={idx} className="tag-item">
                     <span>{tag}</span>
-                    <button type="button" onClick={() => removeTag(tag)}>×</button>
+                    <button className={styles.tagButton} type="button" onClick={() => removeTag(tag)}>×</button>
                   </div>
                 ))}
               </div>
