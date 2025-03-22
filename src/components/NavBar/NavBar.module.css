@@ -24,14 +24,14 @@
   .left {
     display: flex;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
     left: 20px;
   }
   
   .rightNav {
     display: flex;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
     right: 20px;
   }
 
@@ -59,7 +59,7 @@
 
   .rightNav a::after {
     content: '';
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     width: 0;
@@ -139,20 +139,20 @@
   }
  
   @media only screen and (max-width: 414px) {
-    .leftNav {
+    /* .leftNav {
       height: 70px;
     }
     
     .rightNav li {
       margin-left: 15px;
-    }
+    } */
     
     .rightNav a {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     .logo {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
     
     .logo img {
@@ -163,5 +163,10 @@
     
     .signInBtn, .signUpBtn, .signOutBtn {
       padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+
+    .rightNav ul {
+      padding: 5px 0;
     }
   }
