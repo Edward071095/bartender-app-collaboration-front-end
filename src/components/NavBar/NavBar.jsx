@@ -5,6 +5,8 @@ import styles from './NavBar.module.css';
 
 import { UserContext } from '../../contexts/UserContext';
 
+import cocktailLogo from '../../assets/images/cocktail-logo.png';
+
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext);
 
@@ -18,8 +20,8 @@ const NavBar = () => {
       <div className={styles.container}>
         <div className={styles.left}>
           <Link to='/' className={styles.logo}>
-            <img src='../assets/images/cocktail-logo.png' alt='Logo'></img>
-            <span>BarHop</span>
+            <img src={cocktailLogo} alt='Logo'></img>
+            <span>BarFly</span>
           </Link>
         </div>
         
