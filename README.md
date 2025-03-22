@@ -1,16 +1,16 @@
-# BarHop 🍸
+# BarFly 🍸
 
 ## Screenshot/Logo
 
-Welcome to ***BarHop*** 
+Welcome to ***BarFly*** 
 
-***BarHop*** is a social platform for bartenders (and users interested in advancing their knowledge!) to create profiles, share their favorite cocktail recipes, and interact with other users by rating, commenting, and discovering new drinks!
+***BarFly*** is a social platform for bartenders (and users interested in advancing their knowledge!) to create profiles, share their favorite cocktail recipes, and interact with other users by rating, commenting, and discovering new drinks!
 
-#### Look for inspiration or show off mixology skills on the ***BarHop*** app.
+#### Look for inspiration or show off mixology skills on the ***BarFly*** app.
 
-## About ***BarHop***
+## About ***BarFly***
 
-**BarHop** allows Bartenders or other users to:
+**BarFly** allows Bartenders or other users to:
 - Create a personal profile and manage their cocktail collection
 - Add their favorite cocktail recipes
 -Share their creations with other bartenders and users
@@ -20,7 +20,7 @@ This app was created to make it easier for bartenders and home mixologists to st
 
 ## Getting Started 
 
-- [BarHop](deployed app link)
+- [BarFly](deployed app link)
 - [Project Planning](https://trello.com/b/YQgO1eTv/bartinder)
 
 - [Backend Repository](https://github.com/Dyoumans1/bartender-app-collaboration)
