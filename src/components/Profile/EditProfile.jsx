@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import userService from "../../services/userService";
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+
 import styles from "../../css-styling/EditProfile.module.css";
 
-const EditProfile = ({ user, onSave }) => {
+const EditProfile = ({ user }) => {
+  const { userId } = useParams();  
     const navigate = useNavigate();
-    const initialState = {
-      username: user.username || '',
-      bio: user.bio || '',
-      profileImage: user.profileImage || ''
-    };
-  
+    const initialState = {username: '', bio: '', profileImage: '' };
     const [formData, setFormData] = useState(initialState);
   
     useEffect(() => {
-      setFormData({
-        username: user.username || '',
-        bio: user.bio || '',
-        profileImage: user.profileImage || ''
-      });
-    }, [user]);
+      const fetchUserProfile = async () => {
+        const userData = await userService.getProfile(userId);
+        setFormData(userData);
+      };
+      
+      if (userId) fetchUserProfile();
+
+      return ()=> setFormData(initialState);
+    }, [userId] );
+    
   
     const handleChange = (evt) => {
       setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -27,21 +28,42 @@ const EditProfile = ({ user, onSave }) => {
   
     const handleSubmit = async (evt) => {
       evt.preventDefault();
-      const updatedUser = { ...user, ...formData };
-      await userService.updateProfile(updatedUser);
-      onSave(updatedUser); 
-      navigate('/profile');
+      try {
+        const profileData = {
+          username: formData.username,
+          bio: formData.bio,
+          profileImage: formData.profileImage
+        };
+
+        await userService.updateProfile(userId, profileData);
+        navigate(`/profiles/${userId}`);
+
+      } catch (error) {
+        console.log("Were you trying to update your profile? Seems like this was the problem:", error)
+      }
+      
+      
+      // const updatedProfile = { ...user, ...formData};
+      // await userService.updateProfile(userId, updatedProfile);
+      // setFormData(updatedProfile);
+      // navigate(`/profiles/${userId}`);
+      // const updatedUser = { ...formData,  user};
+      // await userService.updateProfile(userId, updatedUser);
+      // onSave(updatedUser); 
+      // navigate('/profiles/');
     };
-  
+    console.log(userId);
+    console.log(formData);
+
     return (
-      <div className={styles.scrollableWrapper}>
+      <div className={styles.profileContainer}>
         <div className={styles.formContainer}>
-          <h1 className={styles.formTitle}>Edit Profile</h1>
+          <h1 className={styles.profileHeader}>Edit Profile</h1>
   
           <form onSubmit={handleSubmit}>
     
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="username-input">Username</label>
+              <label className={styles.myProfileBio} htmlFor="username-input">Username: </label>
               <input
                 className={styles.input}
                 required
@@ -55,7 +77,7 @@ const EditProfile = ({ user, onSave }) => {
             </div>
   
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="bio-input">Bio</label>
+              <label className={styles.myProfileBio} htmlFor="bio-input">Bio: </label>
               <textarea
                 className={styles.textarea}
                 name="bio"
@@ -67,7 +89,7 @@ const EditProfile = ({ user, onSave }) => {
             </div>
   
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="profileImage-input">Profile Image URL</label>
+              <label className={styles.myProfileBio} htmlFor="profileImage-input">Profile Image URL: </label>
               <input
                 className={styles.input}
                 type="text"
@@ -77,8 +99,9 @@ const EditProfile = ({ user, onSave }) => {
                 onChange={handleChange}
               />
             </div>
+
   
-            <button type="submit" className={styles.submitButton}>
+            <button type="submit" className={styles.editProfileButton}>
               Save Changes
             </button>
           </form>
