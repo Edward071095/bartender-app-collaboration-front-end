@@ -4,7 +4,6 @@ import userService from "../../services/userService";
 import { UserContext } from '../../contexts/UserContext';
 import styles from "../../css-styling/MyProfile.module.css";
 
-import EditProfile from "./EditProfile"
 import defaultPicture from "../../assets/images/extra.jpg"
 
 const MyProfile = () => {
@@ -12,7 +11,6 @@ const MyProfile = () => {
     const initialState = {username: '', bio: '', profileImage: '' };
 
     const [userData, setUserData] = useState(initialState);
-    const [isEditing, setIsEditing] = useState(false);
 
 
     useEffect(() => {
@@ -24,10 +22,6 @@ const MyProfile = () => {
         fetchUserProfile();
     }, []);
 
-    const handleSave = (updatedUser) => {
-        setUserData(updatedUser);
-        setIsEditing(false);
-    };
 
     if (!user) 
         return <p>Loading profile...</p>;
@@ -46,7 +40,7 @@ const MyProfile = () => {
                />
             </div>
         <p className={styles.myProfileName}>Name: {userData.username}</p>
-        <p className={styles.myProfileBio}>Bio:{userData.bio}</p>
+        <p className={styles.myProfileBio}>Bio: {userData.bio}</p>
             <button className={styles.editProfileButton}><Link to={`/profiles/${user._id}/edit`}>Edit Profile</Link></button>
         </div>
        </main>
