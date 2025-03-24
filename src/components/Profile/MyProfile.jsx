@@ -5,6 +5,7 @@ import { UserContext } from '../../contexts/UserContext';
 import styles from "../../css-styling/MyProfile.module.css";
 
 import EditProfile from "./EditProfile"
+import defaultPicture from "../../assets/images/extra.jpg"
 
 const MyProfile = () => {
     const { user } = useContext(UserContext);
@@ -37,20 +38,13 @@ const MyProfile = () => {
         <div className={styles.formContainer}>
             
         <h1 className={styles.profileHeader}>My Profile</h1>
-        {isEditing ? (
-           <EditProfile user={userData} onSave={handleSave} />
-        ) : (
-            userData.profileImage ? (
             <div className={styles.profileImageContainer}>
-              <img className={styles.myProfileImage} src={userData.profileImage} alt={userData.username} />
+              <img
+               className={styles.myProfileImage} 
+               src={userData.profileImage || defaultPicture} 
+               alt={userData.username} 
+               />
             </div>
-            ) : (
-            <div className={styles.profileImageContainer}>
-
-                <img className={styles.myProfileImage} src="src/assets/images/extra.jpg" alt="default-profile-picture"  />
-            </div>
-            ) 
-        )}
         <p className={styles.myProfileName}>Name: {userData.username}</p>
         <p className={styles.myProfileBio}>Bio:{userData.bio}</p>
             <button className={styles.editProfileButton}><Link to={`/profiles/${user._id}/edit`}>Edit Profile</Link></button>
