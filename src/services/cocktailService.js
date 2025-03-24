@@ -92,9 +92,10 @@ const index = async () => {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      return checkResponse(res);
+      return res.json();
     } catch (error) {
       console.log('Error deleting comment:', error);
+      throw error;
     }
   };
 
