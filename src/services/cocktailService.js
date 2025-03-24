@@ -84,6 +84,21 @@ const index = async () => {
     }
   };
 
+  const searchCocktail = async (cocktails) => {
+    try {
+      const res = await fetch(`${BASE_URL}/search?name=${cocktails}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+      })
+      return res.json();
+    } catch (error) {
+      console.log('Error loading search results:', error)
+    }
+  }
+
   const deleteComment = async (cocktailId, commentId) => {
     try {
       const res = await fetch(`${BASE_URL}/${cocktailId}/comments/${commentId}`, {
@@ -105,6 +120,7 @@ const index = async () => {
     show,
     create,
     createComment,
+    searchCocktail,
     deleteCocktail,
     update,
     deleteComment,
