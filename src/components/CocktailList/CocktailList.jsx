@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router";
 import styles from "../../css-styling/CocktailList.module.css";
 import ed from '../../assets/images/cocktail-placeholder.jpg';
 
-
+import SearchBar from "../SearchBar/SearchBar";
 
 
 const CocktailList = (props) => {
@@ -19,6 +19,7 @@ const CocktailList = (props) => {
   return (
     <main className={styles.pageContainer}>
     <h1 className={styles.pageTitle}>Cocktails</h1>
+    <SearchBar />
       <div className={styles.shelfRow}>
         <div className={styles.cellarGrid}>
         {props.cocktails.map((cocktail) => (

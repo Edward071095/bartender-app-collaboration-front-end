@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { useParams } from "react-router";
+import * as cocktailService from '../../services/cocktailService';
+
 
 import styles from '../../css-styling/SearchBar.module.css'
 
@@ -13,28 +15,26 @@ const sampleData = [
   }
 ]
 
-const SearchPage = () => {
-  const { cocktails } = useParams();
+const SearchBar = () => {
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
 
-const fetchData = () => {
-  fetch(BASE_URL, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${localStorage.getItem('token')}`
-    }
-  })
-  .then((response) => response.json())
-  .then((json) => {
-    const matches = json.filter(() => {
-      return ;
-    })
-    console.log(cocktails)
-  })
-  .catch(error => console.error('Error fetching data:', error))
-}
+  // const fetchData = () => {
+  //   fetch(BASE_URL, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "Authorization": `Bearer ${localStorage.getItem('token')}`
+  //     }
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     const matches = json.filter(() => {
+  //       return ;
+  //     })
+  //   })
+  //   .catch(error => console.error('Error fetching data:', error))
+  // }
 
   const debounce = (func, delay) => {
     let timeoutId
@@ -58,17 +58,31 @@ const fetchData = () => {
     [],
   );
 
-  useEffect(() => {
-    handleSearch(search)
-  }, [search])
+  // useEffect(() => {
+  //   handleSearch(search)
+  // }, [search])
+
+  // useEffect(() => {
+  //   const fetchAllCocktails = async () => {
+  //     const cocktailsData = await cocktailService.searchCocktail('Lil Jon');
+
+  //     setResults(cocktailsData);
+  //   };
+  //   // if (user) fetchAllCocktails();
+  //   fetchAllCocktails();
+  // }, []);
 
   const handleInput = (e) => {
     setSearch(e.target.value)
-    fetchData(e.target.value)
+    // fetchData(e.target.value)
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const cocktailsData = await cocktailService.searchCocktail(search);
+
+    setResults(cocktailsData);
+    console.log(results)
   }
 
 
@@ -76,23 +90,19 @@ const fetchData = () => {
 
   return (
     <div className={styles.backgroundColor}>
-    <div className={styles.searchBarContainer}>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            value={search}
-            onChange={handleInput}
-            className={styles.input}
-            placeholder="Search for a drink!"
-          />
-        </div>
-      </form>
       <div>
-        <button className={styles.searchButton}>Search</button>
+        <form className={styles.searchBarContainer} onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={search}
+              onChange={handleInput}
+              className={styles.input}
+              placeholder="Search for a drink!"
+            />
+            <button className={styles.searchButton}>Search</button>
+        </form>
       </div>
     </div>
-  </div>
 
   )
 
@@ -100,4 +110,4 @@ const fetchData = () => {
 
 
 
-export default SearchPage;
+export default SearchBar;
