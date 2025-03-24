@@ -17,7 +17,7 @@ const Dashboard = () => {
       id:1,
       name:'Halsey Swetzoff',
       role: 'Team Member',
-      bio: 'replace',
+      bio: 'Halsey is a full-stack developer who enjoys building applications from the ground up. He has a background in business that informs his approach to achieving positive outcomes for all stakeholders.',
       githubUrl: 'https://github.com/HalsSwetz',
     },
     {
@@ -31,14 +31,14 @@ const Dashboard = () => {
       id:3,
       name:'Edward Washington',
       role: 'Team Member',
-      bio: 'replace',
+      bio: 'Edward Washington is a junior software developer with a passion for building clean, user-friendly applications. Ed enjoys turning ideas into reality and the constant process of learning new technologies. Ed specializes in full stack development and is well versed in front end and back end development. Ed is currently a student at General Assembly soon to be a graduate, and enjoys being apart of the process that brings digital experiences to life.',
       githubUrl: 'https://github.com/Edward071095',
     },
     {
       id:4,
       name: 'Haaben Kidanu',
       role: 'Team Member',
-      bio: 'replace',
+      bio: 'Haaben Kidanu is a full-stack developer with a background in UX/UI design, who is passionate about creating seamless and efficient digital experiences. Starting with user-centric design and expanding into the technical foundations of building scalable applications, his transition into full-stack development was a natural progression. His goal is to bridge the gap between design and development, ensuring that not only do products look great, but they function flawlessly.',
       githubUrl: 'https://github.com/haaben-exe',
     }
   ]);
