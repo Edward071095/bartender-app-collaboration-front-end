@@ -31,6 +31,7 @@ const MyProfile = () => {
     if (!user) 
         return <p>Loading profile...</p>;
 
+
     return (
         <main className={styles.profileContainer}>
         <div className={styles.formContainer}>
@@ -39,10 +40,15 @@ const MyProfile = () => {
         {isEditing ? (
            <EditProfile user={userData} onSave={handleSave} />
         ) : (
-            user.profileImage ? (
+            userData.profileImage ? (
+            <div className={styles.profileImageContainer}>
               <img className={styles.myProfileImage} src={userData.profileImage} alt={userData.username} />
+            </div>
             ) : (
-                <img className={styles.myProfileImage} src="/images/default-profileImg.jpg" alt="default-profile-picture"  />
+            <div className={styles.profileImageContainer}>
+
+                <img className={styles.myProfileImage} src="src/assets/images/extra.jpg" alt="default-profile-picture"  />
+            </div>
             ) 
         )}
         <p className={styles.myProfileName}>Name: {userData.username}</p>

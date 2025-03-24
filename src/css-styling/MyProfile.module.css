@@ -35,16 +35,20 @@
     border: 1px solid rgba(228, 201, 166, 0.1);
   }
 
-
-  /* .myProfileImage {
-    position: relative; 
+  .profileImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+  }
+
+
+  .myProfileImage {
+    border-radius: 50%; 
     height: 200px;
     overflow: hidden;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
     color: white;
-  } */
+  } 
 
   .myProfileName {
     color: rgb(206, 154, 86);
