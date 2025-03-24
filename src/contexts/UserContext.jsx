@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const UserContext = createContext();
 
@@ -13,6 +13,17 @@ const getUserFromToken = () => {
 function UserProvider({ children }) {
   const [user, setUser] = useState(getUserFromToken());
 
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setUser(getUserFromToken());
+    };
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+    window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
+  
   const value = { user, setUser };
 
   return (
@@ -21,5 +32,7 @@ function UserProvider({ children }) {
     </UserContext.Provider>
   );
 };
+
+
 
 export { UserProvider, UserContext };

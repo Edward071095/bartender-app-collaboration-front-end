@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, redirect } from 'react-router';
 
 import styles from './NavBar.module.css';
 
@@ -13,6 +13,7 @@ const NavBar = () => {
   const handleSignOut = () => {
     localStorage.removeItem('token');
     setUser(null);
+    redirect('/');
   };
 
   return (
@@ -36,7 +37,6 @@ const NavBar = () => {
           ) : (
             <ul>
               <li><Link to='/'>Home</Link></li>
-              <li><Link to='/cocktails/search'>Search</Link></li>
               <li><Link to='/sign-in' className={styles.signInBtn}>Sign In</Link></li>
               <li><Link to='/sign-up' className={styles.signUpBtn}>Sign Up</Link></li>
             </ul>
