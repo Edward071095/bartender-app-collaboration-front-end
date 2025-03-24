@@ -41,19 +41,7 @@ const EditProfile = ({ user }) => {
       } catch (error) {
         console.log("Were you trying to update your profile? Seems like this was the problem:", error)
       }
-      
-      
-      // const updatedProfile = { ...user, ...formData};
-      // await userService.updateProfile(userId, updatedProfile);
-      // setFormData(updatedProfile);
-      // navigate(`/profiles/${userId}`);
-      // const updatedUser = { ...formData,  user};
-      // await userService.updateProfile(userId, updatedUser);
-      // onSave(updatedUser); 
-      // navigate('/profiles/');
     };
-    console.log(userId);
-    console.log(formData);
 
     return (
       <div className={styles.profileContainer}>
