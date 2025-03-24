@@ -1,7 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router';
 import { useState, useEffect, useContext } from 'react';
 import * as cocktailService from '../../services/cocktailService';
-import CocktailForm from '../CocktailForm/CocktailForm';
 import { UserContext } from '../../contexts/UserContext';
 import CommentForm from '../CommentForm/CommentForm';
 import styles from '../../css-styling/CocktailDetails.module.css'
@@ -11,7 +10,7 @@ const CocktailDetails = (props) => {
     const [cocktail, setCocktail] = useState(null); 
     const { user } = useContext(UserContext);
     const { cocktailId } = useParams();
-    console.log('cocktailId', cocktailId);
+    
 
     
     useEffect(() => {
@@ -21,8 +20,6 @@ const CocktailDetails = (props) => {
         };
         fetchCocktail();
     }, [cocktailId]);
-
-    console.log('cocktail state:', cocktail);
 
     
     const handleAddComment = async (commentFormData) => {
@@ -35,7 +32,7 @@ const CocktailDetails = (props) => {
 
     
     const handleDeleteComment = async (commentId) => {
-        console.log('Deleting comment with Id:', commentId);
+        
         await cocktailService.deleteComment(cocktailId, commentId);
         setCocktail({
             ...cocktail,

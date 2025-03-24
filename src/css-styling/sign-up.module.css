@@ -13,96 +13,95 @@
   margin: 0 auto 30px;
 }
 
-
 .scrollableWrapper {
-    height: 100vh;
-    padding-top: 20px; 
-    padding-bottom: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    -webkit-overflow-scrolling: touch;  
-  }
-  
-  .formContainer {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto 40px;
-    padding: 30px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  }
-  
-  .formTitle {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    text-align: center;
-    color: #333;
-  }
-  
-  .formGroup {
-    margin-bottom: 20px;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-  
-  .input,
-  .textarea,
-  .select {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-  }
-  
-  .textarea {
-    min-height: 120px;
-    resize: vertical;
-  }
-  
-  .signupButton {
-    width: 100%;
-    padding: 14px;
-    background-color: tan;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 24px;
-  }
-  
-  .signupButton:hover {
-    background-color: #4e3314;
-  }
-  
-  .submitButton {
-    width: 100%;
-    padding: 14px;
-    background-color: tan;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 24px;
-  }
-  
-  .submitButton:hover {
-    background-color: #4e3314;
-  }
+  height: 100vh;
+  padding-top: 20px; 
+  padding-bottom: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;  
+}
 
-  
+.formContainer {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 40px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.formTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.signupButton {
+  width: 100%;
+  padding: 14px;
+  background-color: tan;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 24px;
+}
+
+.signupButton:hover {
+  background-color: #4e3314;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  background-color: tan;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 24px;
+}
+
+.submitButton:hover {
+  background-color: #4e3314;
+}
+
+
