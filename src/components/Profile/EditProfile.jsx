@@ -39,7 +39,7 @@ const EditProfile = ({ user }) => {
         navigate(`/profiles/${userId}`);
 
       } catch (error) {
-        console.log("Were you trying to update your profile? Seems like this was the problem:", error)
+        
       }
     };
 
