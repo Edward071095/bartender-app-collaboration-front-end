@@ -1,6 +1,10 @@
-# BarFly 🍸
+<div align="center">
 
-## Screenshot/Logo
+![BarFly Logo](src/assets/images/cocktail-logo.png)
+
+</div>
+
+# BarFly 🍸
 
 Welcome to ***BarFly*** 
 
