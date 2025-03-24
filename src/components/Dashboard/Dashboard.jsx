@@ -17,7 +17,7 @@ const Dashboard = () => {
       id:1,
       name:'Halsey Swetzoff',
       role: 'Team Member',
-      bio: 'Halsey is a full stack developer who enjoys building applications from the ground up. He has a background in business that informs his approach to achieving positive outcomes for all stakeholders.',
+      bio: 'Halsey is a full-stack developer who enjoys building applications from the ground up. He has a background in business that informs his approach to achieving positive outcomes for all stakeholders.',
       githubUrl: 'https://github.com/HalsSwetz',
     },
     {
