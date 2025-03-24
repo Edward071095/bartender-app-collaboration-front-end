@@ -25,6 +25,17 @@
     letter-spacing: 1px;
   }
 
+  .formContainer {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background-color: rgba(28, 22, 18, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(228, 201, 166, 0.1);
+  }
+
+
   /* .myProfileImage {
     position: relative; 
     width: 100%;
