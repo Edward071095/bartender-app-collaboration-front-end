@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as cocktailService from '../../services/cocktailService';
-
 import styles from '../../css-styling/CocktailForm.module.css'
 
 
 const CocktailForm = (props) => {
    const { cocktailId } = useParams();
-   console.log(cocktailId);
 
    const initalState = {
     name: '',
@@ -179,15 +177,14 @@ const CocktailForm = (props) => {
               </div>
             </div>
             ))}
-
-                  <button 
-                    type="button" 
-                    className={styles.addButton}
-                    onClick={addIngredient}>
-                      Add Ingredient
-                  </button>
-                  </div>
-                  </div>
+              <button 
+                  type="button" 
+                  className={styles.addButton}
+                  onClick={addIngredient}>
+                    Add Ingredient
+              </button>
+          </div>
+         </div>
 
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor='instructions-input'>Instructions</label>

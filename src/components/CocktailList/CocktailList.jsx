@@ -1,15 +1,11 @@
 import { Link, useNavigate } from "react-router";
-import { useState } from "react";
-import * as cocktailService from "../../services/cocktailService"
 import styles from "../../css-styling/CocktailList.module.css";
-
 import ed from '../../assets/images/cocktail-placeholder.jpg';
 
 
 
 
 const CocktailList = (props) => {
-    const [cocktail, setCocktail] = useState(null);
     const navigate = useNavigate();
     
     if (!props.cocktails || props.cocktails.length === 0) {
@@ -19,23 +15,6 @@ const CocktailList = (props) => {
           </main>
         );
     }
-
-
-//   const chunkArray = (array, size) => {
-//     return Array.from({ length: Math.ceil(array.length / size) }, (_, i) =>
-//       array.slice(i * size, i * size + size)
-//     );
-//   };
-
-
-//   const cocktailRows = chunkArray(props.cocktails, 3); 
-
-
-  const addCocktail = async (cocktailFormData) => {
-    const newCocktail = await cocktailService.createCocktail(cocktailId, cocktailFormData);
-    setCocktail(newCocktail);
-  };
-
 
   return (
     <main className={styles.pageContainer}>
@@ -63,16 +42,6 @@ const CocktailList = (props) => {
                     ${new Date(cocktail.createdAt).toLocaleDateString()}`}
                   </p>
                 </div>
-  
-                {/* {cocktail.tags && (
-                  <div className={styles.cocktailTags}>
-                    {cocktail.tags.split(',').map((tag, index) => (
-                      <span key={index} className={styles.cocktailTag}>
-                        {tag.trim()}
-                      </span>
-                    ))}
-                  </div>
-                )} */}
               </article>
             </Link>
           ))}

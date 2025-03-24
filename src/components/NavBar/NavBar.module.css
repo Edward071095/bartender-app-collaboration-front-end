@@ -1,172 +1,160 @@
 .leftNav {
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    background-color: rgba(26, 19, 16, 0.95);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(179, 135, 40, 0.3);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  background-color: rgba(26, 19, 16, 0.95);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(179, 135, 40, 0.3);
+}
 
-  }
+.container {
+  max-width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .container {
-    max-width: 100%;
-    height: 100%;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .left {
-    display: flex;
-    align-items: center;
-    /* position: absolute; */
-    left: 20px;
-  }
-  
-  .rightNav {
-    display: flex;
-    align-items: center;
-    /* position: absolute; */
-    right: 20px;
-  }
+.left {
+  display: flex;
+  align-items: center;
+  left: 20px;
+}
 
-  .rightNav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-  }
-  
+.rightNav {
+  display: flex;
+  align-items: center;
+  right: 20px;
+}
+
+.rightNav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.rightNav li {
+  margin-left: 35px;
+  text-align: center;
+}
+
+.rightNav a {
+  color: #e8d9c5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.rightNav a::after {
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #b38728;
+  transition: width 0.3s ease;
+}
+
+.rightNav a:hover {
+  color: #b38728;
+}
+
+.rightNav a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #e8d9c5;
+  font-family: serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.signInBtn, .signUpBtn, .signOutBtn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.signInBtn {
+  background-color: #b38728;
+  color: #1a1310 !important;
+}
+
+.signInBtn:hover {
+  background-color: #d4a93a;
+  color: #1a1310 !important;
+}
+
+.signUpBtn {
+  background-color: #b38728;
+  color: #1a1310 !important;
+}
+
+.signUpBtn:hover {
+  background-color: #d4a93a;
+  color: #1a1310 !important;
+}
+
+.signUpBtn::after, .signInBtn::after, .signOutBtn::after {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
   .rightNav li {
-    margin-left: 35px;
-    text-align: center;
+    margin-left: 20px;
   }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logo img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
   
   .rightNav a {
-    color: #e8d9c5;
-    text-decoration: none;
-    font-size: 0.95rem;
-    padding: 8px 0;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .rightNav a::after {
-    content: '';
-    /* position: absolute; */
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: #b38728;
-    transition: width 0.3s ease;
-  }
-
-  .rightNav a:hover {
-    color: #b38728;
+    font-size: 0.85rem;
   }
   
-  .rightNav a:hover::after {
-    width: 100%;
-  }
-  
-
   .logo {
-    display: flex;
-    align-items: center;
-    color: #e8d9c5;
-    font-family: serif;
-    font-size: 1.8rem;
-    text-decoration: none;
-    letter-spacing: 1px;
+    font-size: 1.3rem;
   }
-
+  
   .logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
   }
   
   .signInBtn, .signUpBtn, .signOutBtn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: 600;
-  }
-  
-  .signInBtn {
-    background-color: #b38728;
-    color: #1a1310 !important;
-  }
-  
-  .signInBtn:hover {
-    background-color: #d4a93a;
-    color: #1a1310 !important;
-  }
-  
-  .signUpBtn {
-    background-color: #b38728;
-    color: #1a1310 !important;
-  }
-  
-  .signUpBtn:hover {
-    background-color: #d4a93a;
-    color: #1a1310 !important;
-  }
-  
-  .signUpBtn::after, .signInBtn::after, .signOutBtn::after {
-    display: none;
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 
-  @media only screen and (max-width: 768px) {
-    .rightNav li {
-      margin-left: 20px;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-    }
-    
-    .logo img {
-      width: 35px;
-      height: 35px;
-    }
+  .rightNav ul {
+    padding: 5px 0;
   }
- 
-  @media only screen and (max-width: 414px) {
-    /* .leftNav {
-      height: 70px;
-    }
-    
-    .rightNav li {
-      margin-left: 15px;
-    } */
-    
-    .rightNav a {
-      font-size: 0.85rem;
-    }
-    
-    .logo {
-      font-size: 1.3rem;
-    }
-    
-    .logo img {
-      width: 30px;
-      height: 30px;
-      margin-right: 8px;
-    }
-    
-    .signInBtn, .signUpBtn, .signOutBtn {
-      padding: 6px 12px;
-      font-size: 0.8rem;
-    }
-
-    .rightNav ul {
-      padding: 5px 0;
-    }
-  }
+}

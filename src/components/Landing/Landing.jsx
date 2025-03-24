@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router";
+import { useNavigate } from "react-router";
 
 
 import styles from '../../css-styling/Landing-page.module.css';
