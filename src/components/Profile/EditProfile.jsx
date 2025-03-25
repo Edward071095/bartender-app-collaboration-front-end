@@ -89,7 +89,7 @@ const EditProfile = ({ user }) => {
             </div>
 
   
-            <button type="submit" className={styles.editProfileButton}>
+            <button type="submit" className={styles.addButton}>
               Save Changes
             </button>
           </form>

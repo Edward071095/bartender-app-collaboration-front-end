@@ -13,14 +13,14 @@ const Dashboard = () => {
       id:1,
       name:'Halsey Swetzoff',
       role: 'Team Member',
-      bio: 'Halsey is a full-stack developer who enjoys building applications from the ground up. He has a background in business that informs his approach to achieving positive outcomes for all stakeholders.',
+      bio: 'Halsey Swetzoff is a full-stack developer who enjoys building applications from the ground up. He has a background in business that informs his approach to achieving positive outcomes for all stakeholders.',
       githubUrl: 'https://github.com/HalsSwetz',
     },
     {
       id:2,
       name: 'Derrik Youmans',
       role: 'Team Member',
-      bio: 'Junior Software Developer with practical problem-solving skills honed in warehouse logistics and education. Current General Assembly bootcamp student specializing in user-centered full-stack development. Blends operational insights from diverse work experience with technical expertise to build efficient applications and deliver results.',
+      bio: 'Derrik Youmans is a Junior Software Developer with practical problem-solving skills honed in warehouse logistics and education. Current General Assembly bootcamp student specializing in user-centered full-stack development. Blends operational insights from diverse work experience with technical expertise to build efficient applications and deliver results.',
       githubUrl: 'https://github.com/Dyoumans1',
     },
     {

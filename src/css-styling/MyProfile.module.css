@@ -3,10 +3,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #1a1310;
-    background-image: url('../assets/images/dark-wood-texture.jpg');
-    background-size: cover;
-    background-size: cover;
     min-height: 100vh;
     padding: 100px 40px 60px;
     width: 100%;
