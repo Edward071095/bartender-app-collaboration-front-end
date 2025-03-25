@@ -24,7 +24,7 @@ This app was created to make it easier for bartenders and home mixologists to st
 
 ## Getting Started 
 
-- [BarFly](deployed app link)
+- [BarFly](https://barfly.netlify.app/)
 - [Project Planning](https://trello.com/b/YQgO1eTv/bartinder)
 
 - [Backend Repository](https://github.com/Dyoumans1/bartender-app-collaboration)
