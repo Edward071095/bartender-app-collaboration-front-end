@@ -5,7 +5,7 @@ import { UserContext } from '../../contexts/UserContext';
 import CommentForm from '../CommentForm/CommentForm';
 
 import styles from '../../css-styling/CocktailDetails.module.css';
-import Logo from '../../assets/images/cocktail-logo.png';
+import ed from '../../assets/images/cocktail-placeholder.jpg';
 
 
 const CocktailDetails = (props) => {
@@ -81,7 +81,7 @@ const CocktailDetails = (props) => {
                     <div className={styles.formGroup}>
                             <img 
                                 className={`${styles.cocktailImage} ${cocktail.imageUrl ? styles.userImage : styles.placeholderImage}`} 
-                                src={cocktail.imageUrl || Logo} 
+                                src={cocktail.imageUrl || ed} 
                                 alt={cocktail.name} 
                             />
                     </div>
