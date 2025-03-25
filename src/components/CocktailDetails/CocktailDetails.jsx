@@ -3,7 +3,10 @@ import { useState, useEffect, useContext } from 'react';
 import * as cocktailService from '../../services/cocktailService';
 import { UserContext } from '../../contexts/UserContext';
 import CommentForm from '../CommentForm/CommentForm';
-import styles from '../../css-styling/CocktailDetails.module.css'
+
+import styles from '../../css-styling/CocktailDetails.module.css';
+import Logo from '../../assets/images/cocktail-logo.png';
+
 
 const CocktailDetails = (props) => {
     const navigate = useNavigate();
@@ -76,11 +79,11 @@ const CocktailDetails = (props) => {
             <section className={styles.formContainer}>
                 <header className={styles.formTitle}>
                     <div className={styles.formGroup}>
-                        {cocktail.imageUrl ? (
-                            <img className={styles.cocktailImage} src={cocktail.imageUrl} alt={cocktail.name} />
-                        ) : (
-                            <img src="/images/default-cocktail.png" alt="Default Cocktail" />
-                        )}
+                            <img 
+                                className={`${styles.cocktailImage} ${cocktail.imageUrl ? styles.userImage : styles.placeholderImage}`} 
+                                src={cocktail.imageUrl || Logo} 
+                                alt={cocktail.name} 
+                            />
                     </div>
 
                     <h1 className={styles.formTitle}>Cocktail: {cocktail.name}</h1>

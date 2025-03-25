@@ -49,7 +49,7 @@
   color: #e8d9c5;
   text-decoration: none;
   font-size: 0.95rem;
-  padding: 8px 0;
+  padding: 8px 8px;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -89,29 +89,30 @@
 }
 
 .signInBtn, .signUpBtn, .signOutBtn {
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 8px;
+  border-radius: 12px;
   font-weight: 600;
 }
 
 .signInBtn {
-  background-color: #b38728;
-  color: #1a1310 !important;
+  background-color: #e7bf2d;
+  color: #ffff !important;
+
 }
 
 .signInBtn:hover {
-  background-color: #d4a93a;
-  color: #1a1310 !important;
+  background-color: #8d6d0c;
+  color: #fff !important;
 }
 
 .signUpBtn {
-  background-color: #b38728;
-  color: #1a1310 !important;
+  background-color: #e7bf2d;
+  color: #ffff !important;
 }
 
 .signUpBtn:hover {
-  background-color: #d4a93a;
-  color: #1a1310 !important;
+  background-color: #8d6d0c;
+  color: #fff !important;
 }
 
 .signUpBtn::after, .signInBtn::after, .signOutBtn::after {
