@@ -1,5 +1,5 @@
-import { useState, useCallback, useEffect } from "react";
-import { Link, useNavigate } from "react-router";
+import { useState } from "react";
+import { Link } from "react-router";
 import * as cocktailService from '../../services/cocktailService';
 
 import styles from '../../css-styling/SearchBar.module.css';
@@ -24,19 +24,16 @@ const SearchBar = () => {
     const cocktailsData = await cocktailService.index();
     const matches = cocktailsData.filter((cocktailData) => {
 
-      // Name search
       if (cocktailData.name.toLowerCase().includes(search)) {
         return true;
       }
 
-      // Ingredient search
       if (cocktailData.ingredients.some(ingredient =>
         ingredient.name.toLowerCase().includes(search)
       )) {
         return true;
       }
 
-      // Tag Search
       if (cocktailData.tags.some(tag =>
         tag.toLowerCase().includes(search)
       )) {
