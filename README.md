@@ -29,6 +29,7 @@ This app was created to make it easier for bartenders and home mixologists to st
 
 - [Backend Repository](https://github.com/Dyoumans1/bartender-app-collaboration)
 
+
 ## Attributions
 
 - [FreePik for images](https://www.freepik.com/)
@@ -38,6 +39,8 @@ This app was created to make it easier for bartenders and home mixologists to st
 - [PunchDrink for cocktail recipes to add](https://punchdrink.com/)
 
 - [UnSplash for images](https://unsplash.com/)
+
+- GitHubIconSVG by Kharioki
 
 ## Technologies Used
 
